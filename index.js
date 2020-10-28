@@ -1,26 +1,3 @@
-const cron = require("node-cron");
-const { db, http, signs } = require("./utils");
+import { temp, programar } from "./utils/temp.js";
 
-class Main {
-    static async getHoroscope() {
-        const todayHoroscope = [];
-        for (const sign of signs) {
-            const { horoscope } = (await http.get("/" + sign)).data;
-            todayHoroscope.push({
-                sign,
-                horoscope
-            });
-        }
-
-        const name = new Date()
-            .toDateString()
-            .split(" ")
-            .join("_");
-
-        db.setItem(name, JSON.stringify(todayHoroscope));
-    }
-}
-
-cron.schedule("* * * * * *", () => {
-    Main.getHoroscope();
-});
+//console.log(temp.toString)
