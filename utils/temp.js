@@ -1,7 +1,8 @@
-const cron = require("node-cron");
-const { db, http, altas } = require("./utils");
+//const cron = require("node-cron");
+import cron from 'node-cron'
+import { db, http, altas}from"./utils"
 
-class temp {
+export class temp {
     static async getAltaPaciente() {
         const altaPacientehoy = [];
         for (const alta of altas) {
@@ -20,22 +21,4 @@ class temp {
         db.setItem(name, JSON.stringify(altaPacientehoy));
     }
 }
-function programar() {
-  let task = cron.schedule(" * * * * *", () => {
-        console.log("pacientes de alta");
-        //temp.getAltaPaciente();
-    }{
-        scheduled: false  
-    });
-    task.start();
-}
-function cancelar() {
-    let task = cron.schedule('* * * * *', () => {
-        console.log('will execute every minute until stopped');
-    });
-    task.stop();
-}
-module.exports = {
-    temp,
 
-}
