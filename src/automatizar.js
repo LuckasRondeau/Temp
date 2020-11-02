@@ -11,13 +11,10 @@ function lanzarElDia(dia, tarea){
     setTimeout(tarea, dia.getTime()-(new Date()).getTime());
 }
 
-lanzarElDia(new Date('2020-10-29 20:20'), tarea);
+//lanzarElDia(new Date('2020-10-29 20:20'), tarea);
 //-------------------------------------------------------------------
 "use strict";
 // ejecutar todos los dias a la misma hora 
-function tarea(){
-    console.log('Iniciando tarea', new Date());
-}
 
 function lanzarSiempreALaHora(hora, minutos, tarea){
     var ahora = new Date();
@@ -33,6 +30,6 @@ function lanzarSiempreALaHora(hora, minutos, tarea){
     },dia.getTime()-ahora.getTime());
 }
 
-lanzarSiempreALaHora(21,10, tarea);
+//lanzarSiempreALaHora(21,10, tarea);
 
 export { tarea , lanzarElDia , lanzarSiempreALaHora};

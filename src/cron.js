@@ -1,10 +1,9 @@
-//const cron = require("cron").CronJob;
-
-import cronJob from "cron";
+//var CronJob = require("cron").CronJob;
+import  CronJob  from "cron";
 
 function temporizadorCron() {
-  let job = new cronJob({
-    cronTime: "0 */45 * * * *",
+  let job = new CronJob({
+    cronTime: "* * * * * *",
     onTick: function () {
       let my_date = new Date();
       let tomorrow_date =
