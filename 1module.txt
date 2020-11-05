@@ -30,6 +30,8 @@ id = temporizador.programarRecurrente(jueves,()=>{})
 temporizador.cancelar(id)
 
 }
+
+
 crontab.guru
 
 Campos permitidos
