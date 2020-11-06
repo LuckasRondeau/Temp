@@ -2,7 +2,7 @@ import cronNode from "node-cron";
 import { programar } from "./programar.js";
 
 function startTemporizadorNcron() {
-  let cronJob = cronNode.schedule( programar(),() => {
+  let cronJob = cronNode.schedule( '* * * * * *',() => {
       // perform operation e.g. GET request http.get() etc.
       let hoy = new Date();
       console.log("tarea Iniciada ", hoy);
@@ -13,22 +13,38 @@ function startTemporizadorNcron() {
     }
   );
   cronJob.start();
-
 }
-function stopTemporizador() {
-  let task = cronNode.schedule("* * * * * *", () => {
-   // cronJob.start();
-    console.log("se ejecutará cada minuto hasta que se detenga");
+
+function startTemporizadorNcron1(fecha) {
+  console.log("Programada para :",fecha)
+  let cronJob = cronNode.schedule(fecha,() => {
+      // perform operation e.g. GET request http.get() etc.
+      let hoy = new Date();
+      console.log("Tarea Iniciada ", hoy);
+    },
+    {
+      scheduled: true,//para establecer si la tarea creada está programada
+      timeZone: " America / Argentina / Buenos_Aires ",// 180
+    }
+  );
+  cronJob.start();
+}
+function stopTemporizador(id) {
+  console.log("Tarea detenida : "+ id);
+  let cronJob = cronNode.schedule(id, () => {
+    //console.log("se ejecutará cada minuto hasta que se detenga");
   });
-  task.stop();
+  
+  cronJob.stop();
 }
 
-function destroyTemporizador() {
-  let cronJob = cronNode.schedule("* * * * *", () => {
+function destroyTemporizador(id) {
+  console.log("Tarea detenida y eliminada: "+ id);
+  let cronJob = cronNode.schedule(id, () => {
     console.log("ya no se ejecutará ni podrá reiniciarse");
   });
   cronJob.destroy();
 }
 
 
-export { startTemporizadorNcron, stopTemporizador, destroyTemporizador };
+export { startTemporizadorNcron, stopTemporizador, destroyTemporizador, startTemporizadorNcron1 };

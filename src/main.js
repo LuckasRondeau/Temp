@@ -1,16 +1,24 @@
 import * as cronNode from "./cronNode.js";
 import * as auto from "./automatizar.js";
-import * as cron from "./cron.js";
+import { programar } from "./programar.js";
 
-//cronNode.startTemporizadorNcron();
-//cronNode.stopTemporizador();
-console.log("----------------------------");
-//cron.temporizadorCron();
-console.log("----------------------------");
+console.log("\n");
+let programado = programar(" * 23 * Nov Thursday");
+
+console.log("------------------------------------");
+cronNode.startTemporizadorNcron1(programado);
+
+console.log("------------------------------------");
+cronNode.stopTemporizador(programado);
+
+console.log("------------------------------------");
+cronNode.destroyTemporizador(programado);
+
+console.log("------------------------------------");
 let tarea = auto.tarea();
-console.log("----------------------------");
-//auto.lanzarSiempreALaHora(22, 10, tarea);
-auto.lanzarElDia(5,tarea);
-console.log("----------------------------");
-//auto.lanzarElDia(new Date("2020-10-29 20:20"), tarea);
+console.log("------------------------------------");
+auto.lanzarSiempreALaHora(22, 10, tarea);
+
+console.log("------------------------------------");
+cronNode.startTemporizadorNcron();
 

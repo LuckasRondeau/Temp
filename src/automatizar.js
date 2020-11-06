@@ -5,21 +5,22 @@ function tarea() {
   console.log("Iniciando Tarea", new Date());
 }
 
-function lanzarElDia(dia, tarea) {
+function lanzarElDia(dias, tarea) {
+  let dia =dias;
   console.log("Lanzado", new Date());
-  console.log("Para ser ejecutado el", dia);
-  this.dia =dia ;
+  console.log("Para ser ejecutada el", dia);
   setTimeout(tarea, dia.getTime() - new Date().getTime());
 }
 
 //lanzarElDia(new Date('2020-10-29 20:20'), tarea);
+
 //-------------------------------------------------------------------
 ("use strict");
 // ejecutar todos los dias a la misma hora
 
 function lanzarSiempreALaHora(hora, minutos, tarea) {
   var ahora = new Date();
-  console.log("Lanzado", ahora);
+  console.log("Lanzado :", ahora);
   var dia = new Date(
     ahora.getFullYear(),
     ahora.getMonth(),
@@ -31,7 +32,7 @@ function lanzarSiempreALaHora(hora, minutos, tarea) {
     // la hora era anterior a la hora actual, debo sumar un día
     dia = new Date(dia.getTime() + 1000 * 60 * 60 * 24);
   }
-  console.log("para ser ejecutado el dia :", dia);
+  console.log("para ser ejecutada el dia :", dia);
   setTimeout(function () {
     tarea();
     lanzarSiempreALaHora(hora, minutos, tarea);
