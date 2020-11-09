@@ -1,11 +1,12 @@
 import cronNode from "node-cron";
 import { programar } from "./programar.js";
 
-function startTemporizadorNcron() {
+function startTemporizador() {
+  
   let cronJob = cronNode.schedule( '* * * * * *',() => {
       // perform operation e.g. GET request http.get() etc.
-      let hoy = new Date();
-      console.log("tarea Iniciada ", hoy);
+      let hoy = new Date().toLocaleString();
+      console.log("Tarea Iniciada ", hoy);
     },
     {
       scheduled: true,//para establecer si la tarea creada está programada
@@ -15,11 +16,11 @@ function startTemporizadorNcron() {
   cronJob.start();
 }
 
-function startTemporizadorNcron1(fecha) {
+function startTemporizador1(fecha) {
   console.log("Programada para :",fecha)
   let cronJob = cronNode.schedule(fecha,() => {
       // perform operation e.g. GET request http.get() etc.
-      let hoy = new Date();
+      let hoy = new Date().toLocaleString();
       console.log("Tarea Iniciada ", hoy);
     },
     {
@@ -47,4 +48,4 @@ function destroyTemporizador(id) {
 }
 
 
-export { startTemporizadorNcron, stopTemporizador, destroyTemporizador, startTemporizadorNcron1 };
+export { startTemporizador, stopTemporizador, destroyTemporizador, startTemporizador1 };

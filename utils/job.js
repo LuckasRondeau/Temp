@@ -1,12 +1,12 @@
-const fs = require("fs");
-const path = require("path");
+import { readdirSync } from "fs";
+import { join } from "path";
 
-exports.job = () => {
+export function job() {
   const folderName = "docs";
-  const folderPath = path.join(__dirname, folderName);
+  const folderPath = join(__dirname, folderName);
 
-  const files = fs.readdirSync(folderPath);
+  const files = readdirSync(folderPath);
   // for (const file of files) {
   console.log(files);
   // }
-};
+}
