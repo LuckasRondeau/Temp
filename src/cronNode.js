@@ -8,7 +8,7 @@ function startTemporizadorNcron() {
       console.log("tarea Iniciada ", hoy);
     },
     {
-      scheduled: true,//para establecer si la tarea creada está programada
+      //scheduled: true,//para establecer si la tarea creada está programada
       timeZone: " America / Argentina / Buenos_Aires ",// 180
     }
   );

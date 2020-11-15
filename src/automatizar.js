@@ -2,7 +2,9 @@
 
 //que se ejecute en una fecha y horario determinado:
 function tarea() {
-  console.log("Iniciando Tarea", new Date());
+  var d = new Date();
+  var n = d.getHours();
+  console.log("Iniciando Tarea", n);
 }
 
 function lanzarElDia(dias, tarea) {
