@@ -1,18 +1,32 @@
 [
     {
-        "alta": "PABLO PEREZ",
-        "fase": "2"
+        "Nombre": "ROQUE PEREZ",
+        "Dni": "33656265",
+        "FechadeAlta":"12/11/2020",
+        "fase": "2",
+        "Alta":"SI"
     },
     {
-        "alta": "JUAN PEREZ",
-        "fase": "2"
+        "Nombre": "MIRIAM ACHABAL",
+        "Dni": "33656265",
+        "FechadeAlta":"12/11/2020",
+        "fase": "2",
+        "Alta":"SI"
     },
     {
-        "alta": "RODRIGO MOTTO",
-        "fase": "2"
+        "Nombre": "JUAN DOMINGUEZ",
+        "Dni": "33656265",
+        "FechadeAlta":"12/11/2020",
+        "fase": "3",
+        "Alta":"SI"
     },
     {
-        "alta": "PEDRO MARMOL",
-        "fase": "2"
+        "Nombre": "PEDRO HERACLES",
+        "Dni": "33656265",
+        "FechadeAlta":"-",
+        "fase": "1",
+        "Alta":"NO"
     }
+    
+   
 ]

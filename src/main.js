@@ -1,4 +1,4 @@
-import * as cronNode from "./cronNode.js";
+import {tarea} from "./cronNode.js";
 import { programar } from "./programar.js";
 
 
@@ -8,13 +8,13 @@ import { programar } from "./programar.js";
 let programado = programar(" 45 20 * Nov Sunday");
 
 console.log("------------------------------------");
-cronNode.startTemporizador1(programado);
+tarea.startTemporizador1(programado);
 
 console.log("------------------------------------");
-cronNode.stopTemporizador(programado);
+tarea.stopTemporizador(programado);
 
 console.log("------------------------------------");
-cronNode.destroyTemporizador(programado);
+tarea.destroyTemporizador(programado);
 
 console.log("------------------------------------");
-cronNode.startTemporizador();
+tarea.startTemporizador();
