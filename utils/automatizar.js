@@ -2,16 +2,12 @@
 
 //que se ejecute en una fecha y horario determinado:
 function tarea() {
-
-
   var d = new Date();
   var n = d.getHours();
   console.log("Iniciando Tarea", n);
-
 }
 
 function lanzarElDia(dia, tarea) {
-
   console.log("Lanzado", new Date().toLocaleString());
   console.log("Para ser ejecutada el", dia);
   setTimeout(dia.getTime() - new Date().getTime());
@@ -37,7 +33,7 @@ function lanzarSiempreALaHora(hora, minutos, tarea) {
     // la hora era anterior a la hora actual, debo sumar un día
     dia = new Date(dia.getTime() + 1000 * 60 * 60 * 24);
   }
-  console.log("para ser ejecutada el dia :", hora +":"+minutos);
+  console.log("para ser ejecutada el dia :", hora + ":" + minutos);
   setTimeout(function () {
     tarea();
     lanzarSiempreALaHora(hora, minutos, tarea);

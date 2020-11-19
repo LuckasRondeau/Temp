@@ -1,11 +1,9 @@
 import cronNode from "node-cron";
 import { programar } from "./programar.js";
 
-function tarea() {
+
   function startTemporizador() {
-    let cronJob = cronNode.schedule(
-      "* * * * * *",
-      () => {
+    let cronJob = cronNode.schedule("* * * * * *",() => {
         // perform operation e.g. GET request http.get() etc.
         let hoy = new Date().toLocaleString();
         console.log("Tarea Iniciada ", hoy);
@@ -20,9 +18,7 @@ function tarea() {
 
   function startTemporizador1(fecha) {
     console.log("Programada para :", fecha);
-    let cronJob = cronNode.schedule(
-      fecha,
-      () => {
+    let cronJob = cronNode.schedule(fecha,() => {
         // perform operation e.g. GET request http.get() etc.
         let hoy = new Date().toLocaleString();
         console.log("Tarea Iniciada ", hoy);
@@ -39,7 +35,6 @@ function tarea() {
     let cronJob = cronNode.schedule(id, () => {
       //console.log("se ejecutará cada minuto hasta que se detenga");
     });
-
     cronJob.stop();
   }
 
@@ -50,7 +45,6 @@ function tarea() {
     });
     cronJob.destroy();
   }
-  return startTemporizador1
-}
 
-export { tarea };
+
+export { startTemporizador , startTemporizador1 , destroyTemporizador, stopTemporizador };

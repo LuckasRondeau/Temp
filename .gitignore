@@ -1,5 +1,2 @@
 /node_modules
 .DS_Store
-1module.txt
-.coverage
-.nyc_output
