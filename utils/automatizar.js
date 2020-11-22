@@ -8,7 +8,6 @@ function tarea() {
 }
 
 function lanzarElDia(dia, tarea) {
-
   console.log("Lanzado", new Date().toLocaleString());
   console.log("Para ser ejecutada el", dia);
   setTimeout(dia.getTime() - new Date().getTime());

@@ -4,31 +4,27 @@
     "Dni": "33656265",
     "FechadeAlta": "12/11/2020",
     "fase": "2",
-    "Alta": "SI",
-    "email":"rperez@gmail.com"
+    "Alta": "SI"
   },
   {
     "Nombre": "MIRIAM ACHABAL",
     "Dni": "33656265",
     "FechadeAlta": "12/11/2020",
     "fase": "2",
-    "Alta": "SI",
-    "email":"machabal@gmail.com"
+    "Alta": "SI"
   },
   {
     "Nombre": "JUAN DOMINGUEZ",
     "Dni": "33656265",
     "FechadeAlta": "12/11/2020",
     "fase": "3",
-    "Alta": "SI",
-    "email":"jdominguez@gmail.com"
+    "Alta": "SI"
   },
   {
     "Nombre": "PEDRO HERACLES",
     "Dni": "33656265",
     "FechadeAlta": "-",
     "fase": "1",
-    "Alta": "NO",
-    "email":"pheracles@gmail.com"
+    "Alta": "NO"
   }
 ]

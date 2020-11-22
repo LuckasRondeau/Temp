@@ -1,0 +1,50 @@
+Main:------------------------------------------------------------
+const{crearMailer}=requiere('mimailer')
+
+credenciales ={user:"" , pass:""}
+
+main(){
+ 
+    const mailer = crearMailer(credenciales)
+    // faltan los async await 
+    mailer.enviar('hola@chau')
+    mod.enviarMail('mimail'),'asunto', 'texto')
+    
+    pdfgen= crearPedfgen()
+
+    templateFactura = crearTemplateFactura()
+    id = temporizador.programar(fecha,()=>{})
+    id = temporizador.programar(dentrodehoras,()=>{})
+    id = temporizador.programarRecurrente(jueves,()=>{})
+    temporizador.cancelar(id)
+}
+=================================================================
+const mailModulo = require(loquesea)
+
+function crearMailer(credenciales){
+    //validaciones 
+    const enviador = mailModulo(credenciales)
+    return {
+        enviarMail: (mail)=>{
+            //validaciones 
+            enviador.enviar(mail)
+            trasporter.send(....)
+        }
+    }
+}
+module.exports={crearMailer}
+=================================================================
+crontab.guru
+
+Campos permitidos
+                   campo     |         valor
+
+ # ┌────────────── second (optional)	0-59
+ # │ ┌──────────── minute 	            0-59
+ # │ │ ┌────────── hour                 0-23
+ # │ │ │ ┌──────── day of month         1-31
+ # │ │ │ │ ┌────── month                1-12 (or names)
+ # │ │ │ │ │ ┌──── day of week          0-7 (or names, 0 or 7 are sunday)
+ # │ │ │ │ │ │
+ # │ │ │ │ │ │
+ # * * * * * *
