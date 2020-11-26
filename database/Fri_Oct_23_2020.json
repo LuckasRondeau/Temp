@@ -4,7 +4,7 @@
     "Dni": "33656265",
     "FechadeAlta": "12/11/2020",
     "fase": "2",
-    "Alta": "SI",
+    "Alta": true,
     "email":"rperez@gmail.com"
   },
   {
@@ -12,15 +12,15 @@
     "Dni": "33656265",
     "FechadeAlta": "12/11/2020",
     "fase": "2",
-    "Alta": "SI",
+    "Alta": true,
     "email":"machabal@gmail.com"
   },
   {
     "Nombre": "JUAN DOMINGUEZ",
     "Dni": "33656265",
-    "FechadeAlta": "12/11/2020",
+    "FechadeAlta": "-",
     "fase": "3",
-    "Alta": "SI",
+    "Alta": false,
     "email":"jdominguez@gmail.com"
   },
   {
@@ -28,7 +28,7 @@
     "Dni": "33656265",
     "FechadeAlta": "-",
     "fase": "1",
-    "Alta": "NO",
+    "Alta": false,
     "email":"pheracles@gmail.com"
   }
 ]

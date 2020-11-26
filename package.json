@@ -17,6 +17,7 @@
     "cron-converter": "^1.0.0",
     "cron-job-manager": "^2.1.4",
     "express": "^4.17.1",
+    "jspdf": "^2.1.1",
     "mocha": "^8.2.0",
     "node-cron": "^2.0.3",
     "node-fetch": "^2.6.1",
