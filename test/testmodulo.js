@@ -1,24 +1,34 @@
 import { programarFecha } from "../src/programarFecha.js";
 import * as temporizador from "../src/temporizador.js";
+import { mostrarJson } from "../src/mostrarJson.js";
 
 function main() {
-  //Programo por default el horario de la tarea 
+  //Programo por default el horario de la tarea Y nombre
+  const FECHA = new Date().toLocaleString();
   let fechaCronJob = programarFecha();
-  
-  // Creo la tarea cada 10 segundos
-  let temp = temporizador.CrearTemporizador(fechaCronJob, 'TEMP 1');
-  console.log('Ejecuto Start temp')
-  temp.start();  
+  let nombreTemp = "TEMP1";
 
-   // Creo la tarea 2 cada 12 segundos
-   let temp2 = temporizador.CrearTemporizador('*/12 * * * * *', 'TEMP 2');
-   temp2.start();  
- 
-  setTimeout(()=> {console.log('Ejecuto Stop temp'); temp.stop()}, 20000);
-  setTimeout(()=> {console.log('Ejecuto Start temp'); temp.start()}, 22000);
-  setTimeout(()=> {console.log('Ejecuto Destroy temp'); temp.destroy()}, 42000);
-  setTimeout(()=> {console.log('Ejecuto Stop temp2'); temp2.stop()}, 44000);
-  
+  // Creo el temporizador con el nombre
+  const temp1 = temporizador.crearTemporizador(nombreTemp);
 
+  function evento() {
+    console.log("------------------------------------------------");
+    console.log(`Iniciando Tarea : ${nombreTemp} => `, FECHA);
+    console.log("------------------------------------------------");
+    // ejecuta la tarea programada
+    console.log("<<<<<<<<<<<<<<[EVENTO PROGRAMADO]>>>>>>>>>>>>>>>");
+    //tarea de ejemplo pacientes dados de alta !
+    mostrarJson();
+  }
+
+  const id = temp1.crearTarea(fechaCronJob, evento);
+
+  setTimeout(() => {
+    console.log("");
+    console.log("------------------------------------------------");
+    console.log(`    Tarea Detenida ${nombreTemp}`, FECHA);
+    console.log("------------------------------------------------");
+    temp1.cancelar(id);
+  }, 20000);
 }
 main();

@@ -1,25 +1,19 @@
-import cronNode from "node-cron";
-import { ejecutarTarea } from "./ejecutarTarea.js";
+import cron from "node-cron";
 
-
-function CrearTemporizador(fechaCJ, nombreTemp) {
-  console.log("Tarea programada => cronExpression = ", fechaCJ);
-  
-  let cronJob = cronNode.schedule(fechaCJ,() => {
-      let hoy = new Date().toLocaleString();
-      console.log("--------------------------------------------------------");
-      console.log("Iniciando Tarea de Timer " + nombreTemp + " => ", hoy);
-      console.log("--------------------------------------------------------");
-      //ejecuto cualquier tarea que le paso 
-      ejecutarTarea();
+function crearTemporizador(nombreTemp) {
+  const programarTareaDia = {
+    crearTarea: (fechaCJ, evento) => {
+      console.log(nombreTemp ,"Tarea programada => cronExpression = ", fechaCJ);
+      const cronJob = cron.schedule(fechaCJ,evento);
+      return cronJob;
     },
-    {
-      scheduled: true,
-      timeZone: " America / Argentina / Buenos_Aires ",
+    cancelar:(id)=>{
+      const cronJob =(id);
+      return cronJob.stop();
     }
-  );
-
-  return cronJob;
+  };
+  return programarTareaDia;
 }
 
-export { CrearTemporizador };
+
+export {crearTemporizador};
